@@ -1,0 +1,116 @@
+ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpMWE9LLU5oT0ZzbmE4UE5VYmhTNDhnQDM3LjEuMjA4LjIxMjo0NDM=#AIMFOV V2+++
+<REGEDIT+SENSI>"AIMASSIST ";
+REGEDIT 4.0 <Androi>"<ios>'
+          "Norecoil=20"
+          "AimLock=80"
+          "Autoheadshot=70"
+          "reduce_screen_lag=60hz/s"
+          "Fig_lag=70"
+          "Aimbot=60"
+          "Aimfov=20°"
+           </star regedit 4.0> "on"
+"Aimbot"=dword:00000315
+"Aimfov"=dword:00000300
+"Aimhead"=dword:00000348
+"Aimneck"=dword:00000345
+"Aimlock"=dword:00000125
+"DPI"=dword:00000440
+"Sensitivity"=dword:00000100
+<?xml version="1.0" encoding="utf-8"?>
+<mconfig>
+  <configuration> 
+    <handlers>
+      <handler section="feature" 
+	       type="Mono.MonoConfig.FeatureNodeHandler, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null"
+	       storageType="System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[Mono.MonoConfig.FeatureNode, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+      <handler section="configBlock"
+	       type="Mono.MonoConfig.ConfigBlockNodeHandler, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null"
+	       storageType="System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[Mono.MonoConfig.ConfigBlockBlock, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+      <handler section="default"
+	       type="Mono.MonoConfig.DefaultNodeHandler, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null"
+	       storageType="System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[Mono.MonoConfig.DefaultNode, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+      <handler section="defaultConfigFile"
+	       type="Mono.MonoConfig.DefaultConfigFileNodeHandler, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null"
+	       storageType="System.Collections.Generic.Dictionary`2[[System.String, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[Mono.MonoConfig.DefaultConfigFile, mconfig, Version=0.1.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+    </handlers>
+  </configuration>
+
+  <feature name="AJAX" target="web">
+    <description><![CDATA[
+      Adds entries to your Web.config file which are required by any .NET 3.5 AJAX.NET application.
+    ]]></description>
+    <blocks>
+      <block name="AJAX config sections"/>
+      <block name="AJAX controls registration"/>
+      <block name="AJAX compilation"/>
+      <block name="AJAX HTTP handlers"/>
+      <block name="AJAX HTTP modules"/>
+      <block name="AJAX CodeDOM 3.5 settings"/>
+      <block name="AJAX runtime settings"/>
+      <block name="AJAX system.webServer"/>
+      <block name="" />
+    </blocks>
+  </feature>
+
+  <feature name="AJAX1" target="web">
+    <description><![CDATA[
+      Adds entries to your Web.config file which are required by any AJAX.NET 1.0 application.
+    ]]></description>
+    <blocks>
+      <block name="AJAX1 config sections"/>
+      <block name="AJAX1 controls registration"/>
+      <block name="AJAX1 compilation"/>
+      <block name="AJAX1 HTTP handlers"/>
+      <block name="AJAX1 HTTP modules"/>
+      <block name="AJAX1 system.web.extensions"/>
+      <block name="AJAX1 system.webServer"/>
+      <block name="" />
+    </blocks> 
+  </feature>
+
+  <feature name="DynamicData" target="web">
+    <description><![CDATA[
+      Adds entries to your Web.config file which are required by any ASP.NET DynamicData application.
+    ]]></description>
+    <blocks>
+      <block name="AJAX config sections"/>
+      <block name="AJAX controls registration"/>
+      <block name="AJAX compilation"/>
+      <block name="AJAX HTTP handlers"/>
+      <block name="AJAX HTTP modules"/>
+      <block name="AJAX system.web.extensions"/>
+      <block name="AJAX system.webServer"/>
+
+      <block name="DynamicData controls registration" />
+      <block name="DynamicData compilation" />
+      <block name="DynamicData HTTP modules" />
+    </blocks>
+  </feature>
+
+  <feature name="SettingsMapProtection" target="web">
+    <description><![CDATA[
+      Adds an entry to your config file which will prevent download of the 'settings.map' file. The
+file is used by the settings mapping manager to modify configuration settings depending on the operating
+system under which your application runs. Add this feature only if you have your own custom 'settings.map'
+file in the top-level directory of your ASP.NET application.
+]]></description>
+    <blocks>
+      <block name="SettingsMap Handler"/>
+    </blocks>
+  </feature>
+
+  <!-- configuration blocks required by the features -->
+  <configBlock name="SettingsMap Handler">
+    <requires>
+      <section name="configuration">
+	<section name="system.web">
+	  <section name="httpHandlers" defaultBlockName="system.web.httpHandlers"/>
+	</section>
+      </section>
+    </requires>
+
+    <contents>
+      <![CDATA[
+<add verb="*" path="settings.map" type="System.Web.HttpForbiddenHandler, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+]]>
+end.
